@@ -1,16 +1,15 @@
 #pragma once
 #define S 5
-namespace knihovna {
+namespace knihovna
+{
 
-
-	struct List {
+	struct List
+	{
 		int vertex;
-		List* next;
+		List *next;
 	};
 	typedef List TList;
-	bool findway(TList** top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
+	bool findway(TList **top, int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
 	void bigpart(int graf[S][S]);
 
-
-
-}
+} // namespace knihovna
