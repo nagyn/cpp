@@ -8,9 +8,9 @@ namespace knihovna {
 		List* next;
 	};
 	typedef List TList;
-	bool findway(TList* top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
+	bool findway(TList** top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
 	void bigpart(int graf[S][S]);
 
 
-	
+
 }

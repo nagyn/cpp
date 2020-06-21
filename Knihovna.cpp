@@ -5,23 +5,12 @@
 using namespace std;
 
 namespace knihovna {
-
-
-
-	//Struktura zásobníku a fronty
-	
-	struct List {
-		int vertex;
-		List* next;
-	};
-	typedef List TList;
-
-	//Zjití, jestli je zásobník prázdný
+	//Zjitï¿½, jestli je zï¿½sobnï¿½k prï¿½zdnï¿½
 	bool sempty(List* top) {
 		return top == NULL;
 	}
 
-	//Vložení do zásobníku
+	//Vloï¿½enï¿½ do zï¿½sobnï¿½ku
 	void push(TList **top, int v)
 	{
 		List* temp = new List();
@@ -31,7 +20,7 @@ namespace knihovna {
 	}
 
 
-	//Vytažení ze zásobníku
+	//Vytaï¿½enï¿½ ze zï¿½sobnï¿½ku
 	int pop(TList **top)
 	{
 		int templ = (*top)->vertex;
@@ -42,13 +31,13 @@ namespace knihovna {
 	}
 
 
-	//Zjití, jestli je fronta prázdná
+	//Zjitï¿½, jestli je fronta prï¿½zdnï¿½
 	bool qempty(List* head) {
 		return head == NULL;
 	}
 
 
-	//Vložení do fronty
+	//Vloï¿½enï¿½ do fronty
 	void enqueue(TList **head, TList **tail, int v)
 	{
 		List* temp = new List();
@@ -69,7 +58,7 @@ namespace knihovna {
 
 
 
-	//Vytažení z fronty
+	//Vytaï¿½enï¿½ z fronty
 	int dequeue(TList **head, TList **tail)
 	{
 		int help = (*head)->vertex;
@@ -82,28 +71,28 @@ namespace knihovna {
 		delete temp;
 		return help;
 	}
-	
-	
+
+
 	//DFS
 
 
-	bool findway(TList *top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish) {
+	bool findway(TList **top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish) {
 		if (start == finish) { return true; }
 		for (int i = 0; i < S; i++) {
 			dfsvisited[i] = false;
 		}
 
 		dfsvisited[start] = true;
-		push(&top,start);
-		while (!sempty(top)) {
-			
-			int v = pop(&top);
-			
+		push(top,start);
+		while (!sempty(*top)) {
+
+			int v = pop(top);
+
 			for (int i = 0; i < S; i++)
 			{
 				if (graphdfs[v][i] == 1 && !dfsvisited[i]) {
 					if (i == finish) { return true; }
-					push(&top,i);
+					push(top,i);
 					dfsvisited[i] = true;
 				}
 			}

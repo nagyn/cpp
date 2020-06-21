@@ -12,7 +12,7 @@ TList* head = NULL;
 TList* tail = NULL;
 TList* merena = NULL;
 TList* nejvetsi = NULL;
-//Definovani grafù
+//Definovani grafï¿½
 
 int graf1[S][S] = { {0,1,1,0,1}, {1,0,1,0,1}, {1,1,0,1,0}, {0,0,1,0,1}, {1,1,0,1,0} };
 int graf2[S][S] = { {0,1,1,0,0}, {1,0,1,0,0}, {1,1,0,1,0}, {0,0,1,0,0}, {0,0,0,0,0} };
