@@ -133,6 +133,7 @@ void print_component(int graph[S][S], int vertex)
 
 	TNode *head = NULL, *tail = NULL;
 	enqueue(&head, &tail, vertex);
+	visited[vertex] = true;
 
 	while (!qempty(head))
 	{
@@ -143,6 +144,8 @@ void print_component(int graph[S][S], int vertex)
 			if (graph[v][i] == 1 && !visited[i])
 			{
 				cout << " " << v << " -> " << i << endl;
+				visited[i] = true;
+				enqueue(&head, &tail, i);
 			}
 		}
 	}
