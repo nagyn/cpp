@@ -2,14 +2,20 @@
 #define S 5
 namespace knihovna
 {
-
-	struct List
+	struct Node
 	{
-		int vertex;
-		List *next;
+		int value;
+		Node *next;
 	};
-	typedef List TList;
-	bool findway(TList **top, int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
-	void bigpart(int graf[S][S]);
+	typedef Node TNode;
 
+	// Stack
+	bool sempty(TNode *top);
+	void push(TNode **top, int v);
+	int pop(TNode **top);
+
+	// Queue
+	bool qempty(TNode *head);
+	void enqueue(TNode **head, TNode **tail, int v);
+	int dequeue(TNode **head, TNode **tail);
 } // namespace knihovna
