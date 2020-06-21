@@ -2,14 +2,20 @@
 #define S 5
 namespace knihovna {
 
-
+	//Struktura zásobníku a fronty
 	struct List {
 		int vertex;
 		List* next;
 	};
 	typedef List TList;
-	bool findway(TList* top,int graphdfs[S][S], bool dfsvisited[S], int start, int finish);
-	void bigpart(int graf[S][S]);
+
+	bool sempty(List* top);
+	void push(TList** top, int v);
+	int pop(TList** top);
+	bool qempty(List* head);
+	void enqueue(TList** head, TList** tail, int v);
+	int dequeue(TList** head, TList** tail);
+
 
 
 	
